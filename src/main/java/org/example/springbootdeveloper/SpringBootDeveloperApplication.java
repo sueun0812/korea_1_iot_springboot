@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Bean;
 // : 사용자가 등록한 빈을 읽고 등록
 // : @Component라는 애너테이션을 가진 클래스를 찾아 빈으로 등록하는 역할
 
-// - @Configureation: 설정 파일 등록
+// - @Configuration: 설정 파일 등록
 // - @Repository: ORM 매핑
 // - @Controller, @RestController: 라우터
 // - @Service: 비즈니스 로직

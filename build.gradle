@@ -1,3 +1,4 @@
+
 plugins {
     id 'java'
     // 프로젝트에 사용할 스프링부트 플러그인 | 스프링의 의존성을 자동 관리하는 플러그인
@@ -7,7 +8,7 @@ plugins {
 
 group = 'org.example'
 version = '1.0-SNAPSHOT'
-sourceCompatibility = '17'  // 자바 소스 컴파일 버전
+sourceCompatibility = '17' // 자바 소스 컴파일 버전
 
 repositories {
     // 의존성을 받을 저장소 지정
@@ -18,6 +19,9 @@ dependencies {
     // 프로젝트 개발에 필요한 기능인 의존성을 입력
     // : 스프링부트 웹 관련 기능 제공 | 테스트 기능을 제공
     implementation('org.springframework.boot:spring-boot-starter-web')
+    testImplementation('org.junit.jupiter:junit-jupiter:5.8.2')
+    testImplementation('org.assertj:assertj-core:3.24.2')
+
     testImplementation('org.springframework.boot:spring-boot-starter-test')
 
     // 스프링 데이터 JPA
