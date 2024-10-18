@@ -59,6 +59,21 @@ public class BookService {
                 .collect(Collectors.toList());
     }
 
+    // 3-3. 카테고리 & 작성자별 책 조회
+    public List<BookResponseDto> getBooksByCategoryAndWriter(Category category, String writer) {
+        List<Book> books;
+
+        if (category == null) {
+            books = bookRepository.findByWriter(writer);
+        } else {
+            books = bookRepository.findByCategoryAndWriter(category, writer);
+        }
+
+        return books.stream()
+                .map(this::convertToResponseDto)
+                .collect(Collectors.toList());
+    }
+
     // 4. 특정 ID 책 수정
     public BookResponseDto updateBook(Long id, BookRequestUpdateDto updateDto) {
         Book book = bookRepository.findById(id)

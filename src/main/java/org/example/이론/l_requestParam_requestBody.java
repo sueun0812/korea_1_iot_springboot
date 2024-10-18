@@ -17,6 +17,16 @@ public class l_requestParam_requestBody {
     // - GET 요청
     // - 보안에 덜 민감한 데이터
 
+    // +) @RequestParam 기본값 해제 & 기본값 설정
+    // : @RequestParam 값이 없을 경우 오류
+    // 1) 필수값 설정 해제
+    // public String getName(@RequestParam(required = false) String name) {
+    // }
+
+    // 2) 기본값 설정
+    // public String getName(@RequestParam(required = false, defaultValue = "default") String name) {
+    // }
+
     // 2. @RequestBody
     // : HTTP 요청의 본문(Body)에 담긴 JSON 또는 XML 같은 데이터를
     //   , 객체로 변환하여 받을 때 사용

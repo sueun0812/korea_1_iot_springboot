@@ -54,6 +54,16 @@ public class BookController {
         return ResponseEntity.ok(books);
     }
 
+    // 카테고리와 작성자별 책 조회
+    @GetMapping("/search/category-writer")
+    public ResponseEntity<List<BookResponseDto>> getBooksByCategoryAndWriter(
+            @RequestParam(required = false) Category category,
+            @RequestParam String writer
+    ) {
+        List<BookResponseDto> books = bookService.getBooksByCategoryAndWriter(category, writer);
+            return ResponseEntity.ok(books);
+    }
+
     // 단건 책 조회
     @GetMapping("/{id}")
     public ResponseEntity<BookResponseDto> getBookById(@PathVariable Long id) {

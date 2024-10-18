@@ -42,5 +42,5 @@ bin/
 .DS_Store
 
 #파일 제외
-application.properties
-application.yml
+*.properties
+*.yml
