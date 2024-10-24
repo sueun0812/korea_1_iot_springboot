@@ -41,5 +41,4 @@ public class Post {
     //      >> 자동으로 해당 Comment가 제거
     @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Comment> comments = new ArrayList<>();
-
 }

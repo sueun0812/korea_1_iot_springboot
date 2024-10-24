@@ -1,4 +1,3 @@
-
 plugins {
     id 'java'
     // 프로젝트에 사용할 스프링부트 플러그인 | 스프링의 의존성을 자동 관리하는 플러그인
@@ -19,20 +18,29 @@ dependencies {
     // 프로젝트 개발에 필요한 기능인 의존성을 입력
     // : 스프링부트 웹 관련 기능 제공 | 테스트 기능을 제공
     implementation('org.springframework.boot:spring-boot-starter-web')
-    testImplementation('org.junit.jupiter:junit-jupiter:5.8.2')
-    testImplementation('org.assertj:assertj-core:3.24.2')
-
-    testImplementation('org.springframework.boot:spring-boot-starter-test')
-
     // 스프링 데이터 JPA
     implementation('org.springframework.boot:spring-boot-starter-data-jpa')
-    implementation('mysql:mysql-connector-java:8.0.33')
+    // 스프링 시큐리티 사용 스타터
+    implementation('org.springframework.boot:spring-boot-starter-security')
+
+    // JWT 의존성 추가
+    implementation('io.jsonwebtoken:jjwt-api:0.11.2')
+    implementation('io.jsonwebtoken:jjwt-impl:0.11.2')
+    implementation('io.jsonwebtoken:jjwt-jackson:0.11.2')
 
     // 데이터베이스 h2 사용
     runtimeOnly('com.h2database:h2')
+    implementation('mysql:mysql-connector-java:8.0.33')
+
     // 반복 메서드 작성 작업을 줄여주는 라이브러리
     compileOnly('org.projectlombok:lombok')
     annotationProcessor('org.projectlombok:lombok')
+
+    testImplementation('org.junit.jupiter:junit-jupiter:5.8.2')
+    testImplementation('org.assertj:assertj-core:3.22.0')
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+    // 스프링 시큐리티 테스트를 위한 테스트 기능 제공
+    testImplementation('org.springframework.security:spring-security-test')
 }
 
 test {

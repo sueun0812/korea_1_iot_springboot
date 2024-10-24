@@ -33,6 +33,11 @@ public class PostController {
         return postService.getPostById(postId);
     }
 
+    @GetMapping("/author/{author}")
+    public ResponseDto<List<PostResponseDto>> getPostByAuthor(@PathVariable String author) {
+        return postService.getPostByAuthor(author);
+    }
+
     @PutMapping("/{postId}")
     public ResponseDto<PostResponseDto> updatePost(
             @PathVariable Long postId,
